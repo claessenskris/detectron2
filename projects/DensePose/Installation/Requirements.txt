@@ -1,1 +1,9 @@
-x
+fvcore==0.1.5.post20221221
+cloudpickle
+omegaconf
+pycocotools
+av
+scipy
+opencv-python
+
+sudo apt-get install libxext6
