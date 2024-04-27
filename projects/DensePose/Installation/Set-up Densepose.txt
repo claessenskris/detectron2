@@ -2,9 +2,7 @@ sudo apt update
 sudo apt install git
 git clone https://github.com/claessenskris/detectron2.git
 
-cd detectron2/projects/DensePose
-export PYTHONPATH="$PYTHONPATH:/pascalem/_pyt/detectron2"
-
+pip install detectron2
 wget https://dl.fbaipublicfiles.com/densepose/DensePose_ResNet50_FPN_s1x-e2e.pkl
 
 curl -o model_final_844d15.pkl https://storage.cloud.google.com/densepose_models/model_final_844d15.pkl
