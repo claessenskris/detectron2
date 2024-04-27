@@ -3,6 +3,5 @@ sudo apt install git
 git clone https://github.com/claessenskris/detectron2.git
 
 pip install detectron2
-wget https://dl.fbaipublicfiles.com/densepose/DensePose_ResNet50_FPN_s1x-e2e.pkl
 
-curl -o model_final_844d15.pkl https://storage.cloud.google.com/densepose_models/model_final_844d15.pkl
+wget https://dl.fbaipublicfiles.com/densepose/densepose_rcnn_R_101_FPN_DL_s1x/165712116/model_final_844d15.pkl
