@@ -299,7 +299,7 @@ class ShowAction(InferenceAction):
         if len(out_dir) > 0 and not os.path.exists(out_dir):
             os.makedirs(out_dir)
         base_file_name = os.path.basename(image_fpath)
-        out_fname = "output/" + base_file_name[:-4] + "_DensePose" + ".png" #ToDo not harded directory output
+        out_fname = "DP/DensePose_output/" + base_file_name[:-4] + "_DensePose" + ".png" #ToDo not harded directory output
         cv2.imwrite(out_fname, image_vis)
         logger.info(f"Output saved to {out_fname}")
         context["entry_idx"] += 1
