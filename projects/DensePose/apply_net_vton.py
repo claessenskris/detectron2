@@ -298,7 +298,8 @@ class ShowAction(InferenceAction):
         print (out_dir)
         if len(out_dir) > 0 and not os.path.exists(out_dir):
             os.makedirs(out_dir)
-        out_fname = image_fpath[:-4] + "_DensePose" + ".png"
+        base_file_name = os.path.basename(image_fpath)
+        out_fname = "output/" + base_file_name[:-4] + "_DensePose" + ".png" #ToDo not harded directory output
         cv2.imwrite(out_fname, image_vis)
         logger.info(f"Output saved to {out_fname}")
         context["entry_idx"] += 1
@@ -338,7 +339,6 @@ class ShowAction(InferenceAction):
         }
         return context
 
-
 def create_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=DOC,
@@ -350,7 +350,6 @@ def create_argument_parser() -> argparse.ArgumentParser:
         action.add_parser(subparsers)
     return parser
 
-
 def main():
     parser = create_argument_parser()
     args = parser.parse_args()
@@ -359,7 +358,6 @@ def main():
     logger = setup_logger(name=LOGGER_NAME)
     logger.setLevel(verbosity_to_level(verbosity))
     args.func(args)
-
 
 if __name__ == "__main__":
     main()
