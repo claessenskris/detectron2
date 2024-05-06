@@ -293,13 +293,12 @@ class ShowAction(InferenceAction):
         image_vis = visualizer.visualize(black_image_np, data) # pass the black image
 
         entry_idx = context["entry_idx"] + 1
-        out_fname = cls._get_out_fname(entry_idx, context["out_fname"])
+#        out_fname = cls._get_out_fname(entry_idx, context["out_fname"])
+        out_fname = "DP/DensePose_output/" + base_file_name[:-4] + "_DensePose" + ".png"  # ToDo not harded directory
         out_dir = os.path.dirname(out_fname)
-        print (out_dir)
         if len(out_dir) > 0 and not os.path.exists(out_dir):
             os.makedirs(out_dir)
         base_file_name = os.path.basename(image_fpath)
-        out_fname = "DP/DensePose_output/" + base_file_name[:-4] + "_DensePose" + ".png" #ToDo not harded directory output
         cv2.imwrite(out_fname, image_vis)
         logger.info(f"Output saved to {out_fname}")
         context["entry_idx"] += 1
