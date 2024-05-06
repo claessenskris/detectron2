@@ -47,7 +47,7 @@ from PIL import Image
 DOC = """Apply Net - a tool to print / visualize DensePose results
 """
 
-LOGGER_NAME = "apply_net"
+LOGGER_NAME = "apply_net_vton"
 logger = logging.getLogger(LOGGER_NAME)
 
 _ACTION_REGISTRY: Dict[str, "Action"] = {}
