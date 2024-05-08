@@ -4,6 +4,9 @@ omegaconf
 pycocotools
 av
 scipy
-opencv-python
 
+opencv-python
 sudo apt-get install libxext6
+
+--upgrade google-api-python-client
+--upgrade google-cloud-storage
